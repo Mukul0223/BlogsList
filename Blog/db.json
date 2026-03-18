@@ -1,0 +1,54 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "author": "John",
+      "title": "React Basics",
+      "url": "http://example.com",
+      "likes": 3
+    },
+    {
+      "id": "2",
+      "author": "Joe",
+      "title": "Road to React",
+      "url": "http://example.com",
+      "likes": 2
+    },
+    {
+      "id": "3",
+      "author": "Joey",
+      "title": "Road to GraphQL",
+      "url": "http://example.com",
+      "likes": 0
+    },
+    {
+      "id": "4",
+      "author": "Doe",
+      "title": "Road to Javascript",
+      "url": "http://example.com",
+      "likes": 12
+    },
+    {
+      "id": "5",
+      "author": "Baa-ha",
+      "title": "Aaaaaaaaaaaaaa",
+      "url": "http://example.com",
+      "likes": 200
+    },
+    {
+      "id": "3230",
+      "author": "New",
+      "title": "New",
+      "url": "http://new/new",
+      "likes": 0
+    },
+    {
+      "id": "6960",
+      "author": "dlep",
+      "title": "quelp",
+      "url": "http://telp",
+      "likes": 6
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
