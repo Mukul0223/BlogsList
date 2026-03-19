@@ -18,13 +18,8 @@ const App = () => {
       });
   }, []);
 
-  const generateId = () => {
-    return Math.floor(Math.random() * (9999 - 0 + 1) + 0);
-  };
-
   const createBlog = (newObject) => {
     const newBlog = {
-      id: generateId().toString(),
       ...newObject,
     };
     blogService
@@ -45,8 +40,6 @@ const App = () => {
   };
 
   const handleDelete = (id) => {
-    // const updatedBlogs = blogs.filter((blog) => blog.id !== id);
-    // setBlogs(updatedBlogs);
     blogService
       .remove(id)
       .then(() => setBlogs((blogs) => blogs.filter((b) => b.id !== id)));

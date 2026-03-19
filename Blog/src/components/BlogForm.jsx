@@ -4,6 +4,7 @@ const BlogForm = ({ createBlog }) => {
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+  const [likes, setLikes] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const createObject = (e) => {
@@ -13,13 +14,14 @@ const BlogForm = ({ createBlog }) => {
       author: author,
       title: title,
       url: url,
-      likes: 0,
+      likes: Number(likes) || 0,
     };
     if (newObject.author && newObject.title && newObject.url) {
       createBlog(newObject);
       setAuthor("");
       setTitle("");
       setUrl("");
+      setLikes("");
     } else {
       setErrorMessage("Missing values!");
       setTimeout(() => {
@@ -40,6 +42,10 @@ const BlogForm = ({ createBlog }) => {
     setUrl(e.target.value);
   };
 
+  const handleLikes = (e) => {
+    setLikes(e.target.value);
+  };
+
   return (
     <div>
       <form onSubmit={createObject}>
@@ -55,7 +61,18 @@ const BlogForm = ({ createBlog }) => {
           placeholder="title"
           onChange={handleTitle}
         />
-        <input type="url" value={url} placeholder="url" onChange={handleUrl} />
+        <input
+          type="url"
+          value={url}
+          placeholder="url"
+          onChange={handleUrl}
+        />
+        <input
+          type="number"
+          value={likes}
+          placeholder="likes"
+          onChange={handleLikes}
+        />
         <button type="submit">Save</button>
       </form>
       {errorMessage ? <>{errorMessage}</> : <></>}
